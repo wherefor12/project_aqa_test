@@ -1,5 +1,5 @@
 import pytest
-from loops_practice import RosticsLoad
+from pages.rostics_load import RosticsLoad
 
 
 @pytest.fixture
@@ -11,3 +11,6 @@ def rostics_monitor_with_yield():
     monitor = RosticsLoad()
     yield monitor
     #teardown после yield
+
+
+
