@@ -41,3 +41,6 @@ def test_login_success():
     page.login("user", "pass")
 
     assert page.login_in == True
+
+def test_open_browser(page):
+    page.goto("https://www.google.com")
