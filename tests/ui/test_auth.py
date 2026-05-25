@@ -13,6 +13,9 @@ def test_successful(page):
     username = os.getenv("GH_USER")
     password = os.getenv("GH_PASS")
 
+    if not username or not password:
+        pytest.skip("Нет переменных GH_USER / GH_PASS")
+    
     login = AuthPage(page)
     login.open()
     login.login(username, password)
