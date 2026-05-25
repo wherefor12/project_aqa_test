@@ -1,6 +1,9 @@
 import pytest
 from pages.rostics_load import RosticsLoad
 from playwright.sync_api import sync_playwright
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @pytest.fixture
 def rostics_monitor():
