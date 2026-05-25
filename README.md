@@ -22,3 +22,33 @@ Windows:
 
 7. Запустить тесты:
 `pytest -q`
+
+
+## Как запустить UI-тесты
+
+### Установка зависимостей
+
+```bash
+pip install -r requirements.txt
+playwright install
+```
+
+### Переменные окружения
+
+Создать файл `.env` в корне проекта:
+GH_USER=логин_github
+GH_PASS=пароль_github
+
+> Файл `.env` не хранится в репозитории — он добавлен в `.gitignore`
+
+### Запуск UI-тестов
+
+Все UI-тесты:
+```bash
+pytest -m ui -v
+```
+
+Конкретный файл:
+```bash
+pytest tests/ui/test_auth.py -v
+```
