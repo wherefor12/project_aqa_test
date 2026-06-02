@@ -34,3 +34,6 @@ def test_failed(page):
 
     error_massage = page.locator("#js-flash-container")
     expect(error_massage).to_be_visible()
+
+    assert page.locator("#login_field").input_value() == username
+
