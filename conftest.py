@@ -2,6 +2,7 @@ import pytest
 from pages.rostics_load import RosticsLoad
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
+from pages.for_api_dataclass.color_api import ColorsApi
 
 load_dotenv()
 
@@ -23,5 +24,6 @@ def page():
         yield page
         browser.close()
 
-
-
+@pytest.fixture
+def colors():
+    return ColorsApi().get_colors()
